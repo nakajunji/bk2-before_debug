@@ -16,6 +16,7 @@ class BooksController < ApplicationController
     @post_book = Book.new
     @book = Book.find(params[:id])
     @book_comment = BookComment.new
+    @book_comments = @book.book_comments.includes(:user)
   end
 
   def index
